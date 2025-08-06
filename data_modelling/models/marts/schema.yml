@@ -55,6 +55,8 @@ models:
       - name: plan_code
         tests:
           - not_null
+          - accepted_values:
+              values: ['ELT', 'ESS', 'PRM', 'STD']
           - relationships:
               to: ref('mart_dim_plans')
               field: plan_code

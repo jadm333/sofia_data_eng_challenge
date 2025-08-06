@@ -216,7 +216,8 @@ logs/
 *.duckdb
 *.csv
 
-
+# Extra files
 gdrive_credentials.json
 .DS_Store
 .user.yml
+*.png

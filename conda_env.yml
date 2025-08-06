@@ -4,7 +4,20 @@ channels:
 dependencies:
   - python=3.13
   - dbt-core
+  - duckdb-engine 
   - dbt-duckdb
   - google-api-python-client
   - google-auth-oauthlib
   - python-dotenv
+  - pandas
+  - matplotlib
+  - plotly
+  - jupyter
+  - notebook
+  - ipykernel
+  - pip
+  - pip:
+    - langchain-google-genai
+    - langchain-community
+    - sqlalchemy
+    - kaleido
