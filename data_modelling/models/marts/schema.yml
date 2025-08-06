@@ -1,0 +1,103 @@
+version: 2
+
+models:
+  - name: mart_fct_claim_providers
+    columns:
+      - name: claim_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('mart_fct_claims')
+              field: claim_id
+      - name: provider_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('mart_dim_providers')
+              field: provider_id
+
+  - name: mart_fct_claim_diagnosis
+    columns:
+      - name: claim_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('mart_fct_claims')
+              field: claim_id
+      - name: diagnosis_code
+        tests:
+          - not_null
+          - relationships:
+              to: ref('mart_dim_diagnosis')
+              field: diagnosis_code
+
+  - name: mart_fct_claim_procedure
+    columns:
+      - name: claim_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('mart_fct_claims')
+              field: claim_id
+      - name: procedure_code
+        tests:
+          - not_null
+          - relationships:
+              to: ref('mart_dim_procedures')
+              field: procedure_code
+
+  - name: mart_dim_patients
+    columns:
+      - name: patient_id
+        tests:
+          - unique
+          - not_null
+      - name: plan_code
+        tests:
+          - not_null
+          - relationships:
+              to: ref('mart_dim_plans')
+              field: plan_code
+
+  - name: mart_dim_providers
+    columns:
+      - name: provider_id
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_dim_plans
+    columns:
+      - name: plan_code
+        tests:
+          - unique
+          - not_null
+      - name: plan_name
+        tests:
+          - not_null
+
+  - name: mart_dim_diagnosis
+    columns:
+      - name: diagnosis_code
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_dim_procedures
+    columns:
+      - name: procedure_code
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_fct_claims
+    columns:
+      - name: claim_id
+        tests:
+          - not_null
+      - name: patient_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('mart_dim_patients')
+              field: patient_id

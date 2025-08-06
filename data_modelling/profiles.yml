@@ -1,0 +1,6 @@
+data_modelling:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: data/db.duckdb

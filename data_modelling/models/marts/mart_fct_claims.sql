@@ -1,0 +1,21 @@
+select
+    claim_id,
+    patient_id,
+    service_date,
+    claim_submitted_date,
+    claim_type,
+    place_of_service,
+    billed_amount,
+    allowed_amount,
+    deductible_amount,
+    coinsurance_amount,
+    copay_amount,
+    insurance_paid_amount,
+    patient_responsibility,
+    claim_status,
+    denial_reason,
+    is_in_network,
+    network_tier,
+    prior_auth_number,
+    processed_date
+from {{ ref('stg_claims') }}

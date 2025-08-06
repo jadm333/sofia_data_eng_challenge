@@ -1,0 +1,10 @@
+name: sofia_data_eng_challenge
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - dbt-core
+  - dbt-duckdb
+  - google-api-python-client
+  - google-auth-oauthlib
+  - python-dotenv

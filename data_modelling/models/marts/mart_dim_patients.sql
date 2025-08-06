@@ -1,0 +1,21 @@
+select
+    patient_id,
+    first_name,
+    last_name,
+    maternal_surname,
+    date_of_birth,
+    gender,
+    curp,
+    street_address,
+    city,
+    state,
+    zip_code,
+    email,
+    plan_code,
+    policy_number,
+    group_id,
+    enrollment_date,
+    is_active,
+    annual_deductible,
+    annual_out_of_pocket_max
+from {{ ref('stg_patients') }}

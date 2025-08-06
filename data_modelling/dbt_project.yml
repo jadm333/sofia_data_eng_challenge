@@ -1,0 +1,37 @@
+
+name: 'data_modelling'
+version: '1.0.0'
+config-version: 2
+
+profile: 'data_modelling'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["raw_data"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"  
+clean-targets:    
+  - "target"
+  - "dbt_packages"
+
+models:
+  data_modelling:
+    staging:
+      +materialized: table
+    marts:
+      +materialized: table
+
+seeds:
+  data_modelling:
+    claims:
+      +alias: "raw_data_claims"
+    patients:
+      +alias: "raw_data_patients"
+    providers:
+      +alias: "raw_data_providers"
+    claim_providers:
+      +alias: "raw_data_claim_providers"
+
