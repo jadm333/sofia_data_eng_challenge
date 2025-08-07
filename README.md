@@ -1,4 +1,5 @@
-# sofia_data_eng_challenge
+# Sofia Data Eng Challenge
+
 
 
 1. **Create Conda Environment:**
@@ -20,4 +21,4 @@ conda activate sofia_data_eng_challenge
 python download_data.py
 ```
 
-4. (Optional) The abvove method to get the data is optional, you can just download the data manually and put the csv files inside of `data_modelling/raw_data` 
+4. (Optional) The abvove method to get the data is optional, you can just download the data manually and put the csv files inside of `data_modelling/raw_data`

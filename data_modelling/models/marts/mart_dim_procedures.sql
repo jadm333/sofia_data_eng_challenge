@@ -36,7 +36,7 @@ deduplicated as (
           and procedure_code != ''
 )
 
-select *
+select procedure_code, procedure_description
 from deduplicated
 where rn = 1
 
