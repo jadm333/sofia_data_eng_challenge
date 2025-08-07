@@ -1,5 +1,7 @@
 # Ask claims assistant
 
+**Important**: The assistant use some files generated bny dbt and also the duckdb file, be sure to run dbt before using the agent
+
 Some example using the assistant:
 
 ```python
