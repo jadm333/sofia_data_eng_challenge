@@ -2,6 +2,15 @@
 
 **Important**: The assistant use some files generated bny dbt and also the duckdb file, be sure to run dbt before using the agent
 
+Requirements:
+
+1. Activate conda environment
+```bash
+conda activate sofia_data_eng_challenge
+```
+
+2. Create and fill the `.env` file with the google api key
+
 Some example using the assistant:
 
 ```python
