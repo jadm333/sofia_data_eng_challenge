@@ -63,10 +63,29 @@ def handle_question(question, agent):
     
 
 def create_visualization_tool(database, llm):
+    """    Creates a tool for generating visualizations based on SQL query results.
+
+    Args:
+        database (SQLDatabase): The database connection to run queries.
+        llm (ChatGoogleGenerativeAI): The language model to generate Python code for visualization.
+
+    Returns:
+        function: A tool function that generates visualizations.
+    """
+    
+    # Define the tool function
     
     @tool
     def generate_visualization(sql_query: str, question: str) -> str:
+        """        Generates a visualization based on the SQL query results and the question.
 
+        Args:
+            sql_query (str): The SQL query to execute.
+            question (str): The question to answer with the visualization.
+
+        Returns:
+            str: Path to the generated visualization file or an error message.
+        """
         try:
             # Execute query and get dataframe
             result = database.run(sql_query)
